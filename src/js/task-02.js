@@ -1,3 +1,6 @@
+const ingredientsList = document.querySelector('ul#ingredients');
+
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
