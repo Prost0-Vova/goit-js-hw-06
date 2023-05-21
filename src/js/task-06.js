@@ -1,18 +1,21 @@
-const formInputValidation = document.getElementById('validation-input');
-const dataLength = Number(formInputValidation.getAttribute('data-length'));
+const input = document.querySelector("#validation-input")
 
-formInputValidation.addEventListener('blur', function()  {
-    const inputValue = formInputValidation.value.trim();
-    if (inputValue.length === dataLength) {
+
+input.addEventListener('blur', onInputBlur); 
+    
+    function onInputBlur(event) {
+        const inputValue = event.target.value;
+        const inputLength = Number(event.target.dataset.length)
+        if (inputValue.length === inputLength) {
         
-        formInputValidation.classList.add("valid");
-        formInputValidation.classList.remove("invalid");
-    }
-    else {
+            input.classList.add("valid");
+            input.classList.remove("invalid");
+        }
+        else {
 
-        formInputValidation.classList.add("invalid");
-        formInputValidation.classList.remove("valid");
+            input.classList.add("invalid");
+            input.classList.remove("valid");
         
-    }
-
-})
+        }
+    
+}
