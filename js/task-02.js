@@ -10,12 +10,11 @@ const ingredients = [
   'Condiments',
 ];
 
-ingredients.forEach((ingredient) => {
+const liItem = ingredients.map((ingredient) => {
   const listElement = document.createElement('li');
-  listElement.classList.add('ingredient');
+  listElement.classList.add('item');
   listElement.textContent = ingredient;
-  listElement.classList.add('item')
-  ingredientsList.appendChild(listElement);
+  return listElement;
 });
 
-
+ingredientsList.append(...liItem);
